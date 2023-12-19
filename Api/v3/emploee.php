@@ -5,7 +5,7 @@
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
         
-        $emploee = new Emploee($_POST['name'],$_POST['date'],$_POST['salary']);
+        $emploee = new Employee(null,$_POST['name'],$_POST['date'],$_POST['salary']);
         header('Content-Type: application/json');
         echo json_encode($emploee->addClient($conn));
         exit;

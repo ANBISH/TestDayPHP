@@ -16,7 +16,9 @@
         }
         
         public function addClient($conn){
-            $sql = "INSERT INTO Employee (full_name, birth_date, salary) VALUES ('$this->fullName', '$this->birthDate', '$this->salary')";
+            $dateTime = new DateTime($this->birthDate);
+            $formattedDate = $dateTime->format('Y-m-d');
+            $sql = "INSERT INTO Employee (full_name, birth_date, salary,photo,contract_id) VALUES ('$this->fullName', '$formattedDate', '$this->salary',null,null)";
             $emploee = mysqli_query($conn, $sql);
             if ($emploee === TRUE) {
                 $response = ['message' => 'Emploee created successfully'];
