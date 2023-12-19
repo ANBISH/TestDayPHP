@@ -21,7 +21,7 @@
 <form class="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
     <?php if(isset($id) && ctype_digit($id)&&$_SERVER['REQUEST_METHOD'] === 'GET') {  
         $client->selectId($conn,$id); 
-            echo '
+        echo '
             <label>Add Client</label>
             <label>Name:</label>
             <input type="name" name="name" min="4" required value ="'.$client->getName().'"><br>
@@ -30,7 +30,7 @@
             <label>Phone:</label>
             <input type="text" name="phone" required value ="'.$client->getContactNumber().'"><br>
             <input type="submit" id="myBtn" class="button" value="Update">';
-            exit; 
+        exit; 
     }else{
         $response = ['message' => 'Client created successfully'];
         echo json_encode($response);

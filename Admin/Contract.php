@@ -5,7 +5,7 @@
         private $expiryDate;
         private $amount;
 
-        public function __construct($id, $signingDate, $expiryDate, $amount) {
+        public function __construct($id=null, $signingDate=null, $expiryDate=null, $amount=null) {
             $this->id = $id;
             $this->signingDate = $signingDate;
             $this->expiryDate = $expiryDate;
